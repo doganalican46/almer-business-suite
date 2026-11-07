@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="src/backend/Almer.Domain/Almer.Domain.csproj" />
+  <Project Path="src/backend/Almer.Application/Almer.Application.csproj" />
+  <Project Path="src/backend/Almer.Infrastructure/Almer.Infrastructure.csproj" />
+  <Project Path="src/backend/Almer.Api/Almer.Api.csproj" />
+  <Project Path="tests/Almer.Tests/Almer.Tests.csproj" />
+</Solution>

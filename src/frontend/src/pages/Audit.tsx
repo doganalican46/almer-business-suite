@@ -1,0 +1,7 @@
+import { useQuery } from '@tanstack/react-query'
+import { useTranslation } from 'react-i18next'
+import { FileClock } from 'lucide-react'
+import { api } from '../api'
+import { PageTitle } from '../components/ManagementUi'
+
+export function Audit() { const { t, i18n } = useTranslation(); const { data, isLoading } = useQuery({ queryKey: ['audit'], queryFn: api.audit }); return <div><PageTitle title={t('nav.audit')} subtitle={t('roles.subtitle')}/><div className="surface overflow-hidden"><div className="overflow-x-auto"><table className="w-full text-left text-sm"><thead className="border-b border-black/5 bg-[#f7f9f7] text-xs muted dark:border-white/7 dark:bg-white/3"><tr><th className="p-4">{t('common.actions')}</th><th className="p-4">Entity</th><th className="p-4">ID</th><th className="p-4">Zeit / Zaman</th></tr></thead><tbody>{isLoading&&<tr><td colSpan={4} className="p-8 text-center muted">{t('common.loading')}</td></tr>}{data?.map(row=><tr key={row.id} className="border-b border-black/5 last:border-0 dark:border-white/6"><td className="p-4"><span className="inline-flex items-center gap-2 font-medium"><FileClock size={15} className="text-brand-600"/>{row.action}</span></td><td className="p-4">{row.entityType}</td><td className="p-4 font-mono text-xs muted">{row.entityId}</td><td className="p-4">{new Intl.DateTimeFormat(i18n.language,{dateStyle:'medium',timeStyle:'short'}).format(new Date(row.occurredAt))}</td></tr>)}</tbody></table></div></div></div> }
