@@ -39,7 +39,7 @@ function dashboard(): DashboardData {
   }
 }
 
-const settings: TenantSettings = { primaryColor: '#147A46', enabledModules: ['dashboard', 'analytics', 'sales', 'products', 'inventory', 'pricing', 'purchasing', 'suppliers', 'finance', 'reports', 'imports', 'companies', 'roles', 'audit'], criticalStockThreshold: 10, expiryWarningDays: 14 }
+const settings: TenantSettings = { primaryColor: '#247FC3', enabledModules: ['dashboard', 'analytics', 'sales', 'products', 'inventory', 'pricing', 'purchasing', 'suppliers', 'finance', 'reports', 'imports', 'companies', 'roles', 'audit'], criticalStockThreshold: 10, expiryWarningDays: 14 }
 const preferences: DashboardPreference = { hiddenWidgets: [], widgetOrder: [] }
 const notifications: NotificationFeed = { unreadCount: 2, items: [
   { id: 'n1', type: 'CriticalStock', severity: 'Critical', title: 'Kritischer Bestand', message: '14 Artikel liegen unter dem Mindestbestand.', targetUrl: '/inventory', updatedAt: new Date().toISOString(), isRead: false },
