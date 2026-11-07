@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 @theme { --color-brand-50: #edf6ff; --color-brand-100: #d8ebff; --color-brand-500: #247fc3; --color-brand-600: #1769aa; --color-brand-700: #125487; --color-ink: #12233f; --font-sans: "Inter", "Segoe UI Variable", "Segoe UI", sans-serif; }
 :root { color: #12233f; background: #f3f6fb; font-family: var(--font-sans); font-synthesis: none; }
 .dark { color-scheme: dark; color: #f3f7fc; background: #08111f; }
